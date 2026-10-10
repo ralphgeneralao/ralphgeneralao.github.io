@@ -9,7 +9,7 @@ export const siteHeader = `
       <a href="#services">Services</a>
       <!-- <a href="#about">About</a> -->
       <button class="theme-toggle" type="button" aria-label="Switch to night mode" title="Switch to night mode" aria-pressed="false"><span aria-hidden="true">☾</span></button>
-      <a class="contact-link" href="mailto:hello@example.com">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ralphgeneralao%40gmail.com" target="_blank" rel="noopener noreferrer">Let’s talk <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 `;

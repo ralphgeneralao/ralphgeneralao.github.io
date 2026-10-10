@@ -12,7 +12,13 @@
     --coral: #f08066;
     --filter-active: var(--blue);
     --filter-active-text: #fff;
+    --filter-count: var(--accent);
     --label-light: #f4f7fb;
+    --filter-surface: transparent;
+    --filter-border: var(--line);
+    --service-surface: color-mix(in srgb, var(--paper) 92%, transparent);
+    --service-border: color-mix(in srgb, var(--line) 85%, transparent);
+    --service-copy: var(--muted);
     --display: 'Space Grotesk', 'Arial', sans-serif;
     --body: 'DM Sans', 'Arial', sans-serif;
 }
@@ -28,6 +34,12 @@
     --blue: #9bb5ff;
     --filter-active: var(--accent);
     --filter-active-text: #fff;
+    --filter-count: #fff;
+    --filter-surface: #192a40;
+    --filter-border: #465c78;
+    --service-surface: #1b2b41;
+    --service-border: #40536d;
+    --service-copy: #c4d1e2;
 }
 
 * {
@@ -323,9 +335,9 @@ p {
 .filter-button {
     min-height: 34px;
     padding: 0 13px;
-    border: 1px solid var(--line);
+    border: 1px solid var(--filter-border);
     border-radius: 2px;
-    background: transparent;
+    background: var(--filter-surface);
     color: var(--copy);
     cursor: pointer;
     font-size: 10px;
@@ -335,6 +347,7 @@ p {
 
 .filter-button:hover {
     border-color: var(--ink);
+    background: color-mix(in srgb, var(--ink) 7%, transparent);
     color: var(--ink);
 }
 
@@ -346,7 +359,7 @@ p {
 
 .filter-button span {
     margin-left: 5px;
-    color: var(--accent);
+    color: var(--filter-count);
     font-size: 9px;
 }
 
@@ -611,8 +624,8 @@ p {
 .site-footer {
     margin: 0 -7.15%;
     padding: 0 7.15% 20px;
-    background: var(--ink);
-    color: var(--paper);
+    background: #101a2a;
+    color: #f4f7fb;
 }
 
 .footer-cta {
@@ -1264,7 +1277,7 @@ intro-component {
 site-footer-component {
     display: block;
     width: 100%;
-    background: var(--ink);
+    background: #101a2a;
 }
 
 .site-footer {
@@ -1347,6 +1360,16 @@ site-footer-component {
     line-height: 1.6;
 }
 
+[data-theme="dark"] .service-card {
+    border-color: var(--service-border);
+    background: var(--service-surface);
+    box-shadow: 0 8px 22px #0003;
+}
+
+[data-theme="dark"] .service-card p {
+    color: var(--service-copy);
+}
+
 @media (max-width: 760px) {
     .services-section {
         padding-block: 58px 66px;
@@ -1376,4 +1399,13 @@ site-footer-component {
     :root {
         --page-gutter: 5vw;
     }
+}
+
+.service-card {
+    border-color: var(--service-border);
+    background: var(--service-surface);
+}
+
+.service-card p {
+    color: var(--service-copy);
 }
