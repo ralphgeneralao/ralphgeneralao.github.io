@@ -5,7 +5,7 @@ export const siteHeader = `
       <span>GENWEB SOLUTIONS<br><span class="wordmark-subtitle">FULL-STACK WEB DEVELOPER</span></span>
     </a>
     <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
-      <a href="#work">Portfolio <span>09</span></a>
+      <a href="#work">Portfolio <span>10</span></a>
       <a href="#services">Services</a>
       <!-- <a href="#about">About</a> -->
     </nav>

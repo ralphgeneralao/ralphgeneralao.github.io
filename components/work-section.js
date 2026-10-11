@@ -8,10 +8,10 @@ export const workSection = `
       <p class="section-count" id="project-count" aria-live="polite">09 PROJECTS</p>
     </div>
     <div class="filter-row" role="group" aria-label="Filter projects">
-      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work <span>09</span></button>
+      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work <span>10</span></button>
       <button class="filter-button" type="button" data-filter="shopify" aria-pressed="false">Shopify</button>
       <button class="filter-button" type="button" data-filter="platform" aria-pressed="false">Platform</button>
-      <!-- <button class="filter-button" type="button" data-filter="art-direction" aria-pressed="false">Side Projects</button> -->
+      <button class="filter-button" type="button" data-filter="side" aria-pressed="false">Side Projects</button>
     </div>
     <div class="project-grid" id="project-grid">
       <article class="project-card card-wide" type="button" data-category="shopify">
@@ -30,6 +30,11 @@ export const workSection = `
         <a href="https://alearningplace.com.au/" target="_blank" rel="noopener noreferrer" aria-label="View A Learning Place website (opens in a new tab)"><span class="project-image image-shift"><img src="img/alpatp.png" alt="A Learning Place website" loading="lazy"></span></a>
         <!-- <span class="project-meta"><span class="project-name">Shift</span><span class="project-type">Digital experience <span class="project-arrow" aria-hidden="true">↗</span></span></span> -->
         <a class="alpatp-link" href="https://alearningplace.com.au/" target="_blank" rel="noopener noreferrer" aria-label="View A Learning Place website (opens in a new tab)"><span class="project-meta"><span class="project-name">A Learning Place</span><span class="project-type">View Website <span class="project-arrow" aria-hidden="true">↗</span></span></span></a>
+      </article>
+      <article class="project-card card-narrow card-offset" type="button" data-category="side">
+        <a href="https://genweb-tracker.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="View GenWeb Tracker website (opens in a new tab)"><span class="project-image image-shift"><img src="img/genweb-tracker.netlify.app.png" alt="GenWeb Tracker website" loading="lazy"></span></a>
+        <!-- <span class="project-meta"><span class="project-name">Shift</span><span class="project-type">Digital experience <span class="project-arrow" aria-hidden="true">↗</span></span></span> -->
+        <a class="alpatp-link" href="https://genweb-tracker.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="View GenWeb Tracker website (opens in a new tab)"><span class="project-meta"><span class="project-name">GenWeb Tracker</span><span class="project-type">View Website <span class="project-arrow" aria-hidden="true">↗</span></span></span></a>
       </article>
       <article class="project-card card-wide" type="button" data-category="shopify">
         <a href="https://www.ictbillet.com/" target="_blank" rel="noopener noreferrer" aria-label="View ICT billet website (opens in a new tab)"><span class="project-image image-ground"><img src="img/ictbillet.com.png" alt="ICT billet website" loading="lazy"></span></a>

@@ -6,7 +6,7 @@ export const introSection = `
     </div>
     <div class="intro-aside">
       <p>I'm Ralph, a full-stack web developer who partners with thoughtful teams to build bright, useful digital products. Combining a strong eye for design with hands-on <strong>MERN</strong> stack with <strong>Python</strong> experience, I build everything from intuitive user interfaces to secure, scalable backend architectures for the real world.</p>
-      <a class="text-link" href="#about">A little about me <span aria-hidden="true">↓</span></a>
+      <!-- <a class="text-link" href="#about">A little about me <span aria-hidden="true">↓</span></a> -->
     </div>
     <!-- <div class="intro-note" aria-hidden="true"><span>DESIGN WITH<br>INTENTION</span><span class="note-star">✳</span></div> -->
   </section>
