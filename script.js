@@ -8,6 +8,8 @@ const dialogKind = document.querySelector('#dialog-kind');
 const dialogDescription = document.querySelector('#dialog-description');
 const themeToggle = document.querySelector('.theme-toggle');
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
 
 function setTheme(theme, persist = false) {
     const isDark = theme === 'dark';
@@ -27,6 +29,29 @@ setTheme(localStorage.getItem('portfolio-theme') || 'light');
 themeToggle?.addEventListener('click', () => {
     const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme, true);
+});
+
+function closeMenu() {
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation menu');
+    menuToggle?.classList.remove('is-open');
+    siteNav?.classList.remove('is-open');
+}
+
+menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', `${isOpen ? 'Close' : 'Open'} navigation menu`);
+    menuToggle.classList.toggle('is-open', isOpen);
+    siteNav?.classList.toggle('is-open', isOpen);
+});
+
+siteNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
 });
 
 filters.forEach((filter) => {

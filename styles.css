@@ -99,6 +99,16 @@ a:focus-visible {
     border-bottom: 1px solid var(--line);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 1.5vw, 20px);
+}
+
+.menu-toggle {
+    display: none;
+}
+
 .wordmark {
     display: inline-flex;
     gap: 11px;
@@ -132,9 +142,22 @@ a:focus-visible {
 .site-nav {
     display: flex;
     align-items: center;
-    gap: clamp(20px, 4vw, 58px);
+    gap: clamp(16px, 2vw, 28px);
+    margin-left: auto;
+    margin-right: clamp(14px, 1.5vw, 20px);
     font-size: 12px;
     font-weight: 600;
+}
+
+.header-actions .contact-link {
+    padding: 11px 15px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+}
+
+.header-actions .contact-link span {
+    color: var(--ink);
+    font-size: 13px;
 }
 
 .site-nav a {
@@ -719,13 +742,113 @@ p {
         min-height: 72px;
     }
 
-    .site-nav {
-        gap: 16px;
-        font-size: 11px;
+    site-header-component {
+        z-index: 20;
     }
 
-    .site-nav .contact-link {
-        padding: 9px 10px;
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        background: var(--paper);
+        cursor: pointer;
+    }
+
+    .header-actions {
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    .header-actions .contact-link {
+        padding: 8px 9px;
+        font-size: 10px;
+    }
+
+    .header-actions .theme-toggle {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+    }
+
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+    }
+
+    .wordmark {
+        min-width: 0;
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    .wordmark > span:last-child {
+        max-width: 112px;
+    }
+
+    .wordmark-mark {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+        font-size: 16px;
+    }
+
+    .wordmark-subtitle {
+        font-size: 7px;
+        letter-spacing: .04em;
+    }
+
+    .menu-toggle span {
+        width: 17px;
+        height: 2px;
+        background: var(--ink);
+        transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .menu-toggle.is-open span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-open span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px var(--page-gutter) 16px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+        box-shadow: 0 14px 20px #101b2b18;
+        font-size: 13px;
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav > a:not(.contact-link) {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
     }
 
     .intro {
@@ -793,37 +916,10 @@ p {
 }
 
 @media (max-width: 480px) {
-    .site-nav {
-        gap: 8px;
-        font-size: 10px;
-    }
-
-    .site-nav a:first-child span {
-        display: none;
-    }
-
-    .site-nav .contact-link {
-        padding: 8px;
-    }
-
-    .theme-toggle {
-        width: 29px;
-        height: 29px;
-    }
-
-    .wordmark {
-        gap: 7px;
-        font-size: 9px;
-    }
-
-    .wordmark-mark {
-        width: 30px;
-        height: 30px;
-    }
-
-    .wordmark-subtitle {
-        font-size: 8px;
-    }
+    .header-actions { gap: 6px; }
+    .header-actions .contact-link { padding: 7px; }
+    .header-actions .contact-link span { margin-left: 2px; }
+    .wordmark > span:last-child { max-width: 98px; }
 
     .intro .eyebrow {
         flex-wrap: wrap;
@@ -1242,10 +1338,14 @@ code-banner-component {
 }
 
 site-header-component {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     display: block;
     width: 100%;
     border-bottom: 1px solid var(--line);
     background: var(--paper);
+    box-shadow: 0 4px 16px #101b2b12;
 }
 
 .site-header {

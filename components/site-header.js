@@ -4,12 +4,17 @@ export const siteHeader = `
       <span class="wordmark-mark" aria-hidden="true">GS</span>
       <span>GENWEB SOLUTIONS<br><span class="wordmark-subtitle">FULL-STACK DEVELOPER & DESIGNER</span></span>
     </a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
       <a href="#work">Portfolio <span>09</span></a>
       <a href="#services">Services</a>
       <!-- <a href="#about">About</a> -->
+    </nav>
+    <div class="header-actions">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+        <span></span><span></span><span></span>
+      </button>
       <button class="theme-toggle" type="button" aria-label="Switch to night mode" title="Switch to night mode" aria-pressed="false"><span aria-hidden="true">☾</span></button>
       <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ralphgeneralao%40gmail.com" target="_blank" rel="noopener noreferrer">Let’s talk <span aria-hidden="true">↗</span></a>
-    </nav>
+    </div>
   </header>
 `;
