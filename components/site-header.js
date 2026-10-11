@@ -2,7 +2,7 @@ export const siteHeader = `
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="GenWeb Solutions, home">
       <span class="wordmark-mark" aria-hidden="true">GS</span>
-      <span>GENWEB SOLUTIONS<br><span class="wordmark-subtitle">FULL-STACK DEVELOPER & DESIGNER</span></span>
+      <span>GENWEB SOLUTIONS<br><span class="wordmark-subtitle">FULL-STACK WEB DEVELOPER</span></span>
     </a>
     <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
       <a href="#work">Portfolio <span>09</span></a>
