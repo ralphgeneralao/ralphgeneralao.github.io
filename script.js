@@ -54,6 +54,15 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
 });
 
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+        window.scrollTo({ top: 0, behavior });
+        history.replaceState(null, '', '#top');
+    });
+});
+
 filters.forEach((filter) => {
     filter.addEventListener('click', () => {
         const selectedCategory = filter.dataset.filter;
